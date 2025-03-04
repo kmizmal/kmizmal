@@ -1,0 +1,40 @@
+name: generate animation
+
+on:
+  # 每天午夜 00:00 自动运行
+  schedule:
+    - cron: "0 0 * * *"  
+
+  # 允许手动触发
+  workflow_dispatch:
+
+  # main 分支有 push 时触发
+  push:
+    branches:
+      - main   
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    
+    steps:
+      # 生成 GitHub 贡献图蛇形动画
+      - name: Generate GitHub Contribution Snake Animation
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          output_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      # 推送 SVG 到 `action` 分支
+      - name: Push animation to output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: action
+          build_dir: dist
+          commit_message: "chore: update GitHub contribution snake animation"
+          keep_history: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
