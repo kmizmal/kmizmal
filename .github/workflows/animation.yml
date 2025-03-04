@@ -24,10 +24,12 @@ jobs:
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
-          output_dir: dist
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
       # 推送 SVG 到 `action` 分支
       - name: Push animation to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
