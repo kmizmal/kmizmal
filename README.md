@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @kmizmal
-- 👀 I’m interested in play  GenShin,Honor of King
+- 👀 I’m interested in play  GenShin,Honkai：Star Rail,Honor of King
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kmizmal&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kmizmal&layout=compact&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
 
 ![GitHub贡献图](https://raw.githubusercontent.com/kmizmal/kmizmal/refs/heads/action/github-contribution-grid-snake.svg)
 <!---
